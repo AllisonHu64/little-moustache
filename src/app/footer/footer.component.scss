@@ -1,0 +1,19 @@
+/*底部页面*/
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5vw;
+    background-color: rgba(97, 96, 96, 0.849);
+    
+}
+
+footer > p{
+    margin: 0%;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}

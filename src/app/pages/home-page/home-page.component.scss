@@ -1,0 +1,118 @@
+.searchbar_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.searchbar_container > .searchbar{
+    width: 79vw;
+    height: 3vw; 
+    margin: 1.5vw 0vh;
+    border: 0.5vw solid rgb(163, 152, 152);
+    border-radius: 1.5vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.searchbar_container > .searchbar > .inputbox{
+    height: 3vw;
+    width: 70vw;
+    background:none;  
+	outline:none;  
+	border:none;
+    font-size: 1.5vw;
+}
+.searchbar_container > .searchbar > .search_icons{
+    height: 3vw;
+    width: auto;
+}
+
+/*轮播图*/
+.middle_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.middle_container > .focus_container{
+    position: relative;
+    width: 80vw;
+    overflow: hidden;
+
+}
+.middle_container  .pictures{
+    padding: 0;
+    margin: 0%;
+    margin-left: 0vw;
+}
+.middle_container .pictures li{
+    float: left;
+    text-decoration: none;
+    list-style-type: none;
+}
+.middle_container img{
+    width: 80vw;
+    height: auto;
+
+}
+
+/*左右箭头*/
+.arrow_l, .arrow_r{
+    left: 0;
+    position: absolute;
+    text-decoration: none;
+    font-size: 3vw;
+    height: 5vh;
+    width: 3vw;
+    color:white;
+    background-color: rgba(0,0,0,0.3);
+    padding: 0%;
+    top: 50%;
+    margin-top: -2.5vh;
+    text-align: center;
+    line-height: 4.1vh;
+    border-top-right-radius: 2.5vh;
+    border-bottom-right-radius: 2.5vh;
+}
+
+.arrow_r{
+    left: 100%;
+    margin-left: -3vw;
+    border-top-right-radius: 0vw;
+    border-bottom-right-radius: 0vw;
+    border-top-left-radius: 2.5vh;
+    border-bottom-left-radius: 2.5vh;
+}
+
+/*小圈圈*/
+.circle{
+    padding: 0;
+    position: absolute;
+    list-style-type: circle;
+    bottom: 5%;
+    left: 50%;
+    height: 2vw;
+    margin-left: -3vw;
+    background-color:gray;
+    border-radius: 1vw;
+}
+.circle > li{
+    float: left; 
+    width: 1vw;
+    height: 1vw;
+    background-color: white;
+    border-radius: 0.5vw;
+    margin: 0.5vw;
+    list-style: none;
+
+}
+
+.circle > .current{
+    background-color: red;
+}
+
+
+.test-container {
+    background-color: green;
+    height: 10vw;
+    width: 10vw;
+}

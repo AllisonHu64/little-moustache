@@ -1,0 +1,35 @@
+.article-info-container{
+    font-family: "Times New Roman", Times, serif;
+    width: 100%;
+    display: flex;
+    margin: 1.5vw 0vh;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+}
+
+.article-info-title{
+    font-size: 2vw;
+    margin-left: 1vw;
+    font: serif;
+}
+
+.article-info-date, .article-info-view, .article-info-like{
+    color:gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.view_icon{
+    height: 3vw;
+    margin: 0vw 1vw;
+    width: auto;
+}
+
+.like_icon{
+    height: 2vw;
+    margin: 0vw 1vw;
+    width: auto;
+}

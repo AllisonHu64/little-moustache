@@ -1,45 +1,63 @@
 
 
-<div class="searchbar_container">
-    <div class="searchbar" [ngStyle]="{
-        'border': isSearchbarFocus?'0.5vw solid rgb(0, 140, 255)':'0.5vw solid grey'
-    }">
-        <img src="assets/icons/search.png" class="search_icons">
-        <input type="text" class="inputbox" (focus)="setIsSearchbarFocus(true)" (blur)="setIsSearchbarFocus(false)">
-        <img src="assets/icons/cancel.png" class="search_icons">
-    </div>
-</div>
-<div class="middle_container">
-    <div class="focus_container" (mouseover)="stopAutomaticSwipe()" (mouseout)="startAutomaticSwipe()">
-        <!--核心滚动区域-->
-        <ul class="pictures" #Pictures
-            [ngStyle]="{
-            'width': swiperPicArray.length * 100 +'%'
-            }"
-            [@swiperMove] = "signal"
-            >
-            <li *ngFor="let swiperPicPath of swiperPicArray">
-                <img [src]="swiperPicPath" alt="can't find picture">
-                <!--alt 这里可以改进-->
-            </li>
-        </ul>
-        <!--小圆圈-->
-        <ul class="circle" [ngStyle]="{
-            'width': (swiperPicArray.length-2) * 2 + 'vw'
+<div class="page-container">
+
+    <div class="searchbar_container">
+        <div class="searchbar" [ngStyle]="{
+            'border': isSearchbarFocus?'0.5vw solid rgb(0, 140, 255)':'0.5vw solid grey'
         }">
-            <li *ngFor="let swiperPicPath of swiperPicArray.slice(1,-1);let i = index"
-                [ngClass]="{'current':(signal  === i.toString())}">
-            </li>
-        </ul>
-        <!--左侧按钮-->
-        <div class="arrow_l" (click)="swipe(-1)">&lt;</div>
-        <!--右侧按钮-->
-        <div class="arrow_r" (click)="swipe(1)">&gt;</div>
+            <img src="assets/icons/search.png" class="search_icons">
+            <input type="text" class="inputbox" (focus)="setIsSearchbarFocus(true)" (blur)="setIsSearchbarFocus(false)">
+            <img src="assets/icons/cancel.png" class="search_icons">
+        </div>
+    </div>
+    <div class="middle_container">
+        <div class="focus_container" (mouseover)="stopAutomaticSwipe()" (mouseout)="startAutomaticSwipe()">
+            <!--核心滚动区域-->
+            <ul class="pictures" #Pictures
+                [ngStyle]="{
+                'width': swiperPicArray.length * 100 +'%'
+                }"
+                [@swiperMove] = "signal"
+                >
+                <li *ngFor="let swiperPicPath of swiperPicArray">
+                    <img [src]="swiperPicPath" alt="can't find picture">
+                    <!--alt 这里可以改进-->
+                </li>
+            </ul>
+            <!--小圆圈-->
+            <ul class="circle" [ngStyle]="{
+                'width': (swiperPicArray.length-2) * 2 + 'vw'
+            }">
+                <li *ngFor="let swiperPicPath of swiperPicArray.slice(1,-1);let i = index"
+                    [ngClass]="{'current':(signal  === i.toString())}">
+                </li>
+            </ul>
+            <!--左侧按钮-->
+            <div class="arrow_l" (click)="swipe(-1)">&lt;</div>
+            <!--右侧按钮-->
+            <div class="arrow_r" (click)="swipe(1)">&gt;</div>
+        </div>
+    </div>
+    <div class="blogs_container">
+        <div class="hot_blogs_container">
+            <div class="hot_blogs_title">
+                最热博客🔥
+            </div>
+            <app-article></app-article>
+            <app-article></app-article>
+            <app-article></app-article>
+        </div>
+        <div class="recent_blogs_container">
+            <div class="hot_blogs_title">
+                最新博客🔥
+            </div>
+            <app-article></app-article>
+            <app-article></app-article>
+            <app-article></app-article>
+        </div>
+    </div>
+    <div class="see_all_articles_container">
+        <div class="see_all_articles">查看所有文章</div>
     </div>
 </div>
-<div class="blogs-container">
-    <div class="hot-blogs-container"></div>
-    <div class="recent-blogs-container"></div>
-</div>
-
-

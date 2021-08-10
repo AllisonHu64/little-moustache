@@ -1,0 +1,14 @@
+<div ng-if="articleInfo" class="article-info-container">
+    <span class="article-info-title">{{title}}</span>
+    <span class="article-info-date">
+        {{date}}
+    </span>
+    <span class="article-info-view">
+        {{viewCount}}
+        <img src="assets/icons/view.png" class="view_icon">
+    </span>
+    <span class="article-info-like">
+        {{articleInfo.liked}}
+        <img src="assets/icons/like.png" class="like_icon">
+    </span>
+</div>

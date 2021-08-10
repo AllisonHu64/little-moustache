@@ -1,3 +1,8 @@
+/*背景*/
+.page-container{
+    background-color: rgb(241, 235, 235);
+}
+/*搜索框*/
 .searchbar_container{
     display: flex;
     justify-content: center;
@@ -12,6 +17,7 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+    background-color: white;
 }
 
 .searchbar_container > .searchbar > .inputbox{
@@ -111,8 +117,52 @@
 }
 
 
-.test-container {
-    background-color: green;
-    height: 10vw;
-    width: 10vw;
+/*显示文章*/
+.blogs_container{
+    width: 80%;
+    padding: 3% 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: rgb(241, 235, 235);
+
+}
+
+.blogs_container > .hot_blogs_container{
+    width: 45%;
+    background-color: white;
+    font-family: "Arial","Microsoft YaHei","黑体","楷体",sans-serif,"SimSun";
+}
+
+.blogs_container .hot_blogs_title{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    font-size: 2vw;
+    margin-top: 1.5vw;
+    font: "SimSun";
+}
+.blogs_container > .recent_blogs_container{
+    width: 45%;
+    background-color: white;
+}
+
+/*查看所有文章*/
+.see_all_articles_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.see_all_articles_container > .see_all_articles{
+    width: 79vw;
+    height: 3vw; 
+    margin-bottom: 1.5vw;
+    border: 0.5vw solid rgb(163, 152, 152);
+    border-radius: 1.5vw;
+    font-size: 2vw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: white;
 }

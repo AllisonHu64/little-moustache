@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild, Renderer2 } from '@angular/core';
 import { range, Subject } from 'rxjs';
 import {trigger, state, style, animate, transition, animation} from '@angular/animations';
+import { ArticleInfo } from 'src/app/article/article.model';
 
 // 可以修改的地方，swiper 拖拽等问题
 
@@ -120,4 +121,70 @@ export class HomePageComponent implements OnInit {
   setIsSearchbarFocus(value:boolean){
     this.isSearchbarFocus = value;
   }
+
+  public hotBlogs:ArticleInfo[] = [
+      {
+        title: "hello world 1",
+        publishDate: "2021-08-10 19:51:00",
+        liked: 10,
+        views: 10
+      },
+      {
+        title: "hello world 2",
+        publishDate: "2021-08-10 19:51:00",
+        liked: 10,
+        views: 10
+      },
+      {
+        title: "hello world, I am little moust ache. Welcome to this website",
+        publishDate: "2021-08-10 19:51:00",
+        liked: 10,
+        views: 10
+      },
+      {
+        title: "hello world",
+        publishDate: "2021-08-10 19:51:00",
+        liked: 10,
+        views: 10
+      },
+      {
+        title: "hello world",
+        publishDate: "2021-08-10 19:51:00",
+        liked: 10,
+        views: 10
+      }
+    ];
+
+  public recentBlogs:ArticleInfo[] = [
+      {
+        title: "hello world",
+        publishDate: "2021-08-10 19:51:00",
+        liked: 10,
+        views: 10
+      },
+      {
+        title: "hello world",
+        publishDate: "2021-08-10 19:51:00",
+        liked: 10,
+        views: 10
+      },
+      {
+        title: "hello world",
+        publishDate: "2021-08-10 19:51:00",
+        liked: 10,
+        views: 10
+      },
+      {
+        title: "hello world",
+        publishDate: "2021-08-10 19:51:00",
+        liked: 10,
+        views: 10
+      },
+      {
+        title: "hello world",
+        publishDate: "2021-08-10 19:51:00",
+        liked: 10,
+        views: 10
+      }
+    ];
 }

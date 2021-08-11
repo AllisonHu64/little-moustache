@@ -1,0 +1,26 @@
+.tip_container{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+}
+
+.tip_content{
+    background-color: rgb(163, 152, 152);
+    border: 0.5vw solid rgb(163, 152, 152);
+    border-radius: 0.25vw;
+    border-top-left-radius: 0vw;
+    font-size: 1.5vw;
+}
+
+.tip_bubble_trig{
+    width:0px;
+    height:0px;
+    border-top: 1vw solid white;
+    border-right: 2vw solid rgb(163, 152, 152);
+    border-bottom: 1vw solid white;
+}
+
+.tip_outer_container{
+    display: inline;
+    position: absolute
+}

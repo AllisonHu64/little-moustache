@@ -9,11 +9,15 @@
 }
 
 .article-info-title{
-    font-size: 2vw;
-    margin-left: 1vw;
+    font-size: 1.5vw;
     font: serif;
 }
-
+.article-title-container{
+    margin: 0vw 1vw;
+}
+.article-info-date{
+    margin-right: 1vw;
+}
 .article-info-date, .article-info-view, .article-info-like{
     color:gray;
     display: flex;

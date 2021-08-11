@@ -8,7 +8,7 @@ import { ArticleInfo } from './article.model';
 })
 export class ArticleComponent implements OnInit {
   @Input() articleInfo: ArticleInfo = {
-    title: "hello world",
+    title: "hello world, I am little moust ache. Welcome to this website",
     publishDate: "2021-08-10 19:51:00",
     liked: 10,
     views: 10
@@ -37,6 +37,10 @@ export class ArticleComponent implements OnInit {
       const hours = Math.floor(timediff/1000/60/60);
       return `${hours}hr ago`
     }
+    else if (monthdiff == 0){
+      const days = Math.floor(timediff/1000/60/60/24);
+      return `${days}day ago`
+    }
     else if (monthdiff <= 12){
       return `${monthdiff}mo ago`;
     }
@@ -61,10 +65,15 @@ export class ArticleComponent implements OnInit {
   }
 
   get title(){
-    if(this.articleInfo.title.length >= 40){
-      return this.articleInfo.title.slice(0,37) + '...'
+    if(this.articleInfo.title.length >= 60){
+      return this.articleInfo.title.slice(0,57) + '...'
     }
     return this.articleInfo.title
+  }
+  get tip(){
+    return {
+      value: this.articleInfo.title
+    }
   }
 
 }

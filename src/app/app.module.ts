@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
@@ -8,6 +9,8 @@ import { FooterComponent } from './footer/footer.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AboutMeComponent } from './pages/about-me/about-me.component';
 import { ArticleComponent } from './article/article.component';
+import { TipDirective } from './directives/tip/tip.directive';
+import { HoverTipComponent } from './hover-tip/hover-tip.component';
 
 
 @NgModule({
@@ -17,11 +20,14 @@ import { ArticleComponent } from './article/article.component';
     FooterComponent,
     HomePageComponent,
     AboutMeComponent,
-    ArticleComponent
+    ArticleComponent,
+    TipDirective,
+    HoverTipComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    CommonModule,
     BrowserAnimationsModule
   ],
   providers: [],

@@ -1,0 +1,16 @@
+
+<div class="tip_outer_container">
+
+    <div *ngIf="tipModel" class="tip_container">
+        <div class="tip_bubble_trig">
+        </div>
+        <div class="tip_bubble" [ngStyle]="{
+            'width': tipModel.value.length > 30? '20vw':'auto'
+            }">
+            <div class="tip_content">
+                {{tip}}
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -44,17 +44,19 @@
             <div class="hot_blogs_title">
                 最热博客🔥
             </div>
-            <app-article></app-article>
-            <app-article></app-article>
-            <app-article></app-article>
+            <div class="hot_blogs_info_container"
+                 *ngFor = "let blog of hotBlogs" >
+                <app-article [articleInfo]=blog></app-article>
+            </div>
         </div>
         <div class="recent_blogs_container">
             <div class="hot_blogs_title">
                 最新博客🔥
             </div>
-            <app-article></app-article>
-            <app-article></app-article>
-            <app-article></app-article>
+            <div class="recent_blogs_info_container"
+                 *ngFor = "let blog of recentBlogs" >
+                <app-article [articleInfo]=blog></app-article>
+            </div>
         </div>
     </div>
     <div class="see_all_articles_container">

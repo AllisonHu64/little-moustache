@@ -1,0 +1,43 @@
+.project_brackground_picture{
+   height: 30vw;
+}
+
+.project_container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.project_icon{
+    width: 10vw;
+    height: 10vw;
+}
+
+.title_icon_container{
+    margin-left: 5vw;
+    display: flex;
+    flex-direction: row;
+}
+.title_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-left: 5vw;
+}
+
+.title_content{
+    font-size: 2vw;
+    font-weight: bold;
+    text-align: center;
+}
+// 按钮
+.expand_icon{
+    height: 3vw;
+    width: auto;
+}
+
+.hide_icon{
+    padding: 0.25vw 0vw;
+    width: 2.5vw;
+}
+

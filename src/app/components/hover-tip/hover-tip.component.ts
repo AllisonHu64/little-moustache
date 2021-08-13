@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TipModel } from '../directives/tip/tip.model';
+import { TipModel } from '../../directives/tip/tip.model';
 
 @Component({
   selector: 'app-hover-tip',

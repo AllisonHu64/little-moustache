@@ -1,9 +1,13 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { AboutMeComponent } from './pages/about-me/about-me.component';
+import { MyProjectsComponent } from './pages/my-projects/my-projects.component';
 
 const routes: Routes = [
   {path:'home', component:HomePageComponent},
+  {path:'about-me', component:AboutMeComponent},
+  {path: 'my-projects', component: MyProjectsComponent},
   {path:'**', redirectTo:'home'}];
 
 @NgModule({

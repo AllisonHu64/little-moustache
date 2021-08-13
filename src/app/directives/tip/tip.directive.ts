@@ -1,7 +1,7 @@
 import { Directive, Input, ElementRef, HostListener, ViewContainerRef, ComponentRef,
          ComponentFactory, ComponentFactoryResolver } from '@angular/core';
 import { TipModel } from './tip.model';
-import { HoverTipComponent } from 'src/app/hover-tip/hover-tip.component';
+import { HoverTipComponent } from 'src/app/components/hover-tip/hover-tip.component';
 import { iif } from 'rxjs';
 
 

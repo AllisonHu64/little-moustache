@@ -4,13 +4,15 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
 import { AboutMeComponent } from './pages/about-me/about-me.component';
-import { ArticleComponent } from './article/article.component';
+import { ArticleComponent } from './components/article/article.component';
 import { TipDirective } from './directives/tip/tip.directive';
-import { HoverTipComponent } from './hover-tip/hover-tip.component';
+import { HoverTipComponent } from './components/hover-tip/hover-tip.component';
+import { MyProjectsComponent } from './pages/my-projects/my-projects.component';
+import { ProjectComponent } from './components/project/project.component';
 
 
 @NgModule({
@@ -22,7 +24,9 @@ import { HoverTipComponent } from './hover-tip/hover-tip.component';
     AboutMeComponent,
     ArticleComponent,
     TipDirective,
-    HoverTipComponent
+    HoverTipComponent,
+    MyProjectsComponent,
+    ProjectComponent
   ],
   imports: [
     BrowserModule,

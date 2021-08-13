@@ -1,0 +1,17 @@
+<div class="project_container"
+    [ngStyle]="{
+        'backgroundColor': projectShortInfo.backgroundColor
+    }">
+    <div class="title_icon_container">
+        <img class="project_icon" [src]="projectShortInfo.iconPic">
+        <div class="title_container">
+            <div class="title_content">{{projectShortInfo.title}}</div>
+            <img *ngIf="!toggleShortDes" (click)="toggle()" class="expand_icon" src="assets/icons/expand.png">
+            <div *ngIf="toggleShortDes" class="short_description_content">
+                {{projectShortInfo.shortDescription}}
+            </div>
+            <img *ngIf="toggleShortDes" (click)="toggle()" class="hide_icon" src="assets/icons/hide.png">
+        </div>
+    </div>
+    <img class="project_brackground_picture" [src]="projectShortInfo.backgroupPic">
+</div>

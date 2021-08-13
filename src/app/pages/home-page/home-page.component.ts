@@ -1,7 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild, Renderer2 } from '@angular/core';
 import { range, Subject } from 'rxjs';
 import {trigger, state, style, animate, transition, animation} from '@angular/animations';
-import { ArticleInfo } from 'src/app/article/article.model';
+import { ArticleInfo } from 'src/app/components/article/article.model';
 
 // 可以修改的地方，swiper 拖拽等问题
 

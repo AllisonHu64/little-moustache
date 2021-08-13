@@ -25,3 +25,13 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+## You can look at the website at http://allisonhu.top/
+## Things to do:
+## Long term goals
+## 1. connect to database and add user comment
+## Short term goals
+## 1. edit project page, add animation
+## 2. edit search function, and view all page function in the home page
+## 3. create about me page
+## 3. add internationalization

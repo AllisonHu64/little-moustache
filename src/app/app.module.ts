@@ -13,6 +13,7 @@ import { TipDirective } from './directives/tip/tip.directive';
 import { HoverTipComponent } from './components/hover-tip/hover-tip.component';
 import { MyProjectsComponent } from './pages/my-projects/my-projects.component';
 import { ProjectComponent } from './components/project/project.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ProjectComponent } from './components/project/project.component';
     BrowserModule,
     AppRoutingModule,
     CommonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

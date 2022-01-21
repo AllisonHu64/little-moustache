@@ -2,6 +2,7 @@ import { Component, ElementRef, OnInit, ViewChild, Renderer2 } from '@angular/co
 import { range, Subject } from 'rxjs';
 import {trigger, state, style, animate, transition, animation} from '@angular/animations';
 import { ArticleInfo } from 'src/app/components/article/article.model';
+import { BlogService } from '../../service/blog/blog.service';
 
 // 可以修改的地方，swiper 拖拽等问题
 
@@ -71,8 +72,11 @@ export class HomePageComponent implements OnInit {
   public currentPicIndex = 0;
   @ViewChild('Pictures') picturesRef:ElementRef | undefined;
   private _swipeInerval:any;
-  constructor(private _render:Renderer2) { 
-
+  constructor(private _render:Renderer2, private blogService: BlogService) { 
+    blogService.getBlogs().subscribe((value)=>{
+      console.log('ahahah')
+      console.log(value)
+    });
   }
   ngOnInit(): void {
   }
@@ -120,6 +124,11 @@ export class HomePageComponent implements OnInit {
   
   setIsSearchbarFocus(value:boolean){
     this.isSearchbarFocus = value;
+  }
+
+  get testBlogs(){
+
+    return 'a'
   }
 
   public hotBlogs:ArticleInfo[] = [

@@ -3,7 +3,8 @@
     width: 100%;
     display: flex;
     margin: 1.5vw 0vh;
-    justify-content: space-between;
+    // justify-content: space-between;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
 }
@@ -21,7 +22,8 @@
 .article-info-date, .article-info-view, .article-info-like{
     color:gray;
     display: flex;
-    justify-content: center;
+    // justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: row;
 }

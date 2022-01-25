@@ -1,6 +1,7 @@
 export interface ArticleInfo{
-    title:string;
-    publishDate:string;
-    liked: number;
-    views: number;
+    id: number;
+    title: string;
+    author: string;
+    createtime: number;
+    content: string;
 }

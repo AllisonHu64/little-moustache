@@ -1,5 +1,5 @@
 import { Component, ElementRef, OnInit, ViewChild, Renderer2 } from '@angular/core';
-import { range, Subject } from 'rxjs';
+import { Subscription } from "rxjs"
 import {trigger, state, style, animate, transition, animation} from '@angular/animations';
 import { ArticleInfo } from 'src/app/components/article/article.model';
 import { BlogService } from '../../service/blog/blog.service';
@@ -72,11 +72,17 @@ export class HomePageComponent implements OnInit {
   public currentPicIndex = 0;
   @ViewChild('Pictures') picturesRef:ElementRef | undefined;
   private _swipeInerval:any;
-  constructor(private _render:Renderer2, private blogService: BlogService) { 
-    blogService.getBlogs().subscribe((value)=>{
-      console.log('ahahah')
-      console.log(value)
-    });
+  private _recentBlogs: ArticleInfo[] = [];
+  private _subscriptions: Subscription[] = [];
+
+  constructor(private _render:Renderer2, private _blogService: BlogService) { 
+    this._subscriptions.push(_blogService.getBlogs().subscribe((resp: any)=>{
+      if (resp?.errno === 0){
+        this._recentBlogs = resp.data;
+      } else {
+        this._recentBlogs = [];
+      }
+    }));
   }
   ngOnInit(): void {
   }
@@ -87,6 +93,9 @@ export class HomePageComponent implements OnInit {
 
   ngOnDestory():void{
     this._swipeInerval.clear()
+    for(let subscription of this._subscriptions){
+      subscription.unsubscribe()
+    }
   }
 
   swipe(number:-1|1){
@@ -126,74 +135,8 @@ export class HomePageComponent implements OnInit {
     this.isSearchbarFocus = value;
   }
 
-  get testBlogs(){
+  get recentBlogs(){
 
-    return 'a'
+    return this._recentBlogs;
   }
-
-  public hotBlogs:ArticleInfo[] = [
-      {
-        title: "hello world 1",
-        publishDate: "2021-08-10 19:51:00",
-        liked: 10,
-        views: 10
-      },
-      {
-        title: "hello world 2",
-        publishDate: "2021-08-10 19:51:00",
-        liked: 10,
-        views: 10
-      },
-      {
-        title: "hello world, I am little moust ache. Welcome to this website",
-        publishDate: "2021-08-10 19:51:00",
-        liked: 10,
-        views: 10
-      },
-      {
-        title: "hello world",
-        publishDate: "2021-08-10 19:51:00",
-        liked: 10,
-        views: 10
-      },
-      {
-        title: "hello world",
-        publishDate: "2021-08-10 19:51:00",
-        liked: 10,
-        views: 10
-      }
-    ];
-
-  public recentBlogs:ArticleInfo[] = [
-      {
-        title: "hello world",
-        publishDate: "2021-08-10 19:51:00",
-        liked: 10,
-        views: 10
-      },
-      {
-        title: "hello world",
-        publishDate: "2021-08-10 19:51:00",
-        liked: 10,
-        views: 10
-      },
-      {
-        title: "hello world",
-        publishDate: "2021-08-10 19:51:00",
-        liked: 10,
-        views: 10
-      },
-      {
-        title: "hello world",
-        publishDate: "2021-08-10 19:51:00",
-        liked: 10,
-        views: 10
-      },
-      {
-        title: "hello world",
-        publishDate: "2021-08-10 19:51:00",
-        liked: 10,
-        views: 10
-      }
-    ];
 }

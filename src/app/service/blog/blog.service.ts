@@ -11,8 +11,17 @@ export class BlogService {
 
   }
 
-  getBlogs(): Observable<{}> {
-    return this.http.get<{}>('/api/blog/list')
+  getBlogs(isAdmin: boolean = false): Observable<{}> {
+    let url = "/api/blog/list";
+    if (isAdmin){
+      url += "?isadmin=1";
+    }
+    return this.http.get<{}>(url)
   }
 
+  getBlogDetail(id: number): Observable<{}> {
+    let url = `/api/blog/detail?id=${id}`;
+    return this.http.get<{}>(url)
+  }
+  
 }

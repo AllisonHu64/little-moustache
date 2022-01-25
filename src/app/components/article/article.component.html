@@ -1,20 +1,15 @@
 <div ng-if="articleInfo" class="article-info-container">
     <div class="article-title-container">
-        <span *ngIf="title.length > 30" class="article-info-title-long"
-        [appTip]="tip"
-        [ngStyle]="{ 'width': '40%' }">
-            {{title}}
-        </span>
-        <span *ngIf="title.length <= 30" class="article-info-title-short"
+        <span class="article-info-title-short"
             [ngStyle]="{ 'width': '40%' }">
                 {{title}}
             </span>
     </div>
     <span class="article-info-date">
-        {{date}}
+        {{author}}
     </span>
     <span class="article-info-date">
-        zhangsan
+        {{date}}
     </span>
     <!-- <span class="article-info-view">
         {{viewCount}}

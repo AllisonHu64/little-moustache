@@ -14,7 +14,10 @@ import { HoverTipComponent } from './components/hover-tip/hover-tip.component';
 import { MyProjectsComponent } from './pages/my-projects/my-projects.component';
 import { ProjectComponent } from './components/project/project.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { BlogDetailPageComponent } from './pages/blog-detail-page/blog-detail-page.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatDividerModule } from '@angular/material/divider';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -27,14 +30,18 @@ import { HttpClientModule } from '@angular/common/http';
     TipDirective,
     HoverTipComponent,
     MyProjectsComponent,
-    ProjectComponent
+    ProjectComponent,
+    BlogDetailPageComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     CommonModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatCardModule,
+    MatDividerModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

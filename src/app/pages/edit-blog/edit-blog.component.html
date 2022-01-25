@@ -1,0 +1,14 @@
+<section>
+    <button mat-raised-button color="primary" (click)="onUpdateBlogClick()" >Edit Blog</button>
+    <mat-form-field class="title-input"appearance="fill">
+        <mat-label>title</mat-label>
+        <input matInput [(ngModel)]= "title">
+      </mat-form-field>
+    </section>
+    <section>
+    <mat-form-field class="content-input" appearance="fill">
+        <mat-label>content</mat-label>
+        <textarea class="content-input-textarea" matInput placeholder="hello world!" [(ngModel)]= "content"></textarea>
+    </mat-form-field>
+    </section>
+    

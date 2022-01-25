@@ -25,9 +25,26 @@ export class BlogService {
     return this._http.get<{}>(url)
   }
 
-  getBlogDetail(id: number): Observable<{}> {
+  getBlogDetail(id: number, isAdmin:boolean = false): Observable<{}> {
     let url = `/api/blog/detail?id=${id}`;
+    if (isAdmin){
+      url += "&isadmin=1";
+    }
     return this._http.get<{}>(url)
   }
+
+  deleteBlog(id: number): Observable<{}> {
+    let url = `/api/blog/delete?id=${id}`;
+    return this._http.post<{}>(url,{});
+  }
+
+  newBlog(title:string, content:string): Observable<{}> {
+    let url = `/api/blog/new`;
+    return this._http.post<{}>(url, {title:title, content:content})
+  }
   
+  updateBlog(id:number, title:string, content:string): Observable<{}> {
+    let url = `/api/blog/update?id=${id}`;
+    return this._http.post<{}>(url, {title:title, content:content})
+  }
 }

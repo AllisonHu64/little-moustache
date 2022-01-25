@@ -36,7 +36,6 @@ export class BlogDetailPageComponent implements OnInit {
                 this._router.navigate(["home"]);
               } else {
                 this._blogDetail = resp.data;
-                console.log(resp.data)
               }
             });
         }

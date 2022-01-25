@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
+import { first } from 'rxjs/operators'
+import { ActivatedRoute, Router } from '@angular/router';
 import { LoginDialogComponent } from '../login-dialog/login-dialog.component';
 import { UserService } from 'src/app/service/user/user.service';
 
@@ -13,7 +15,7 @@ export class HeaderComponent implements OnInit {
   private _isLogin = false;
   private _loginCheckSubscription: Subscription | null = null;
 
-  constructor(public _dialog: MatDialog, private _userService: UserService) {
+  constructor(public _dialog: MatDialog, private _userService: UserService, private _router: Router) {
   }
 
   ngOnInit(): void {
@@ -47,7 +49,13 @@ export class HeaderComponent implements OnInit {
   }
 
   onAccountClick(){
-
+    this._userService.loginCheck().pipe(first()).subscribe((resp:any)=>{
+      if (resp.errno === 0){
+        this._router.navigate(["/admin"])
+      } else {
+        this.login();
+      }
+    })
   }
 
   get isLogin(){

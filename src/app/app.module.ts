@@ -28,6 +28,9 @@ import { BlogListPageComponent } from './pages/blog-list-page/blog-list-page.com
 import { MatGridListModule } from '@angular/material/grid-list';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { AdminPageComponent } from './pages/admin-page/admin-page.component';
+import { NewBlogComponent } from './pages/new-blog/new-blog.component';
+import { EditBlogComponent } from './pages/edit-blog/edit-blog.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +46,10 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     ProjectComponent,
     BlogDetailPageComponent,
     LoginDialogComponent,
-    BlogListPageComponent
+    BlogListPageComponent,
+    AdminPageComponent,
+    NewBlogComponent,
+    EditBlogComponent
   ],
   imports: [
     BrowserModule,

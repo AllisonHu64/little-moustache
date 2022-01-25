@@ -3,6 +3,7 @@ import { Subscription } from "rxjs"
 import {trigger, state, style, animate, transition, animation} from '@angular/animations';
 import { ArticleInfo } from 'src/app/components/article/article.model';
 import { BlogService } from '../../service/blog/blog.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 // 可以修改的地方，swiper 拖拽等问题
 
@@ -54,6 +55,7 @@ function createSwiperStateAnimation(swiperNum:number){
   ]
 })
 export class HomePageComponent implements OnInit {
+  public search = "";
   public signal = "0";
   public isSearchbarFocus = false;
   public swiperPicArray = [
@@ -75,7 +77,7 @@ export class HomePageComponent implements OnInit {
   private _recentBlogs: ArticleInfo[] = [];
   private _subscriptions: Subscription[] = [];
 
-  constructor(private _render:Renderer2, private _blogService: BlogService) { 
+  constructor(private _render:Renderer2, private _blogService: BlogService, private _router: Router) { 
     this._subscriptions.push(_blogService.getBlogs().subscribe((resp: any)=>{
       if (resp?.errno === 0){
         this._recentBlogs = resp.data;
@@ -131,12 +133,15 @@ export class HomePageComponent implements OnInit {
   }
 
   
-  setIsSearchbarFocus(value:boolean){
-    this.isSearchbarFocus = value;
-  }
+  // setIsSearchbarFocus(value:boolean){
+  //   this.isSearchbarFocus = value;
+  // }
 
   get recentBlogs(){
-
     return this._recentBlogs;
+  }
+
+  onSearchClick(){
+    this._router.navigate(["/blog-list"],{queryParams:{keyword:this.search}})
   }
 }

@@ -9,8 +9,8 @@
     align-items: center;
 }
 .searchbar_container > .searchbar{
-    width: 79vw;
-    height: 3vw; 
+    width: 79vw !important;
+    height: 3vw !important; 
     margin: 1.5vw 0vh;
     border: 0.5vw solid rgb(163, 152, 152);
     border-radius: 1.5vw;
@@ -144,7 +144,7 @@
 }
 .blogs_container > .recent_blogs_container{
     // width: 45%;
-    width: 85%;
+    width: 100%;
     background-color: white;
 }
 

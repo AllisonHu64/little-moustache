@@ -55,4 +55,8 @@ export class ArticleComponent implements OnInit {
     }
   }
 
+  get queryParams(){
+    return {id:this.articleInfo.id};
+  }
+
 }

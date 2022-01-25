@@ -1,4 +1,4 @@
-<div ng-if="articleInfo" class="article-info-container">
+<!-- <div ng-if="articleInfo" class="article-info-container">
     <div class="article-title-container">
         <span class="article-info-title-short"
             [ngStyle]="{ 'width': '40%' }">
@@ -11,12 +11,22 @@
     <span class="article-info-date">
         {{date}}
     </span>
-    <!-- <span class="article-info-view">
+    <span class="article-info-view">
         {{viewCount}}
         <img src="assets/icons/view.png" class="view_icon">
     </span>
     <span class="article-info-like">
         {{articleInfo.liked}}
         <img src="assets/icons/like.png" class="like_icon">
-    </span> -->
-</div>
+    </span>
+</div> -->
+<mat-grid-list cols="15">
+    <a [routerLink]="['/blog-detail']" [queryParams]="queryParams"routerLinkActive="active">
+        <mat-grid-tile class="article-info-title-short" [colspan]="6">{{title}}</mat-grid-tile>
+    </a>
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile class="article-info-date" [colspan]="2">{{author}}</mat-grid-tile>
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile class="article-info-date" [colspan]="4">{{date}}</mat-grid-tile>
+    <mat-grid-tile></mat-grid-tile>
+</mat-grid-list>

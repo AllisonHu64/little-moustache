@@ -24,6 +24,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { BlogListPageComponent } from './pages/blog-list-page/blog-list-page.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatTableModule } from '@angular/material/table';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,8 @@ import { MatIconModule } from '@angular/material/icon';
     MyProjectsComponent,
     ProjectComponent,
     BlogDetailPageComponent,
-    LoginDialogComponent
+    LoginDialogComponent,
+    BlogListPageComponent
   ],
   imports: [
     BrowserModule,
@@ -53,7 +58,10 @@ import { MatIconModule } from '@angular/material/icon';
     MatFormFieldModule,
     FormsModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    MatGridListModule,
+    MatTableModule,
+    MatPaginatorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

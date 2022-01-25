@@ -11,10 +11,16 @@ export class BlogService {
 
   }
 
-  getBlogs(isAdmin: boolean = false): Observable<{}> {
-    let url = "/api/blog/list";
+  getBlogs(author:string = "", keyword:string = "",isAdmin: boolean = false): Observable<{}> {
+    let url = "/api/blog/list?1=1&";
     if (isAdmin){
-      url += "?isadmin=1";
+      url += "&isadmin=1";
+    }
+    if (author!=="''") {
+      url += `&author=${author}`;
+    }
+    if (keyword!=="'%%'") {
+        url += `&keyword=${keyword}`;
     }
     return this._http.get<{}>(url)
   }

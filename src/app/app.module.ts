@@ -18,6 +18,12 @@ import { BlogDetailPageComponent } from './pages/blog-detail-page/blog-detail-pa
 import { MatCardModule } from '@angular/material/card';
 import { MatDividerModule } from '@angular/material/divider';
 import { MatButtonModule } from '@angular/material/button';
+import { LoginDialogComponent } from './components/login-dialog/login-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -31,7 +37,8 @@ import { MatButtonModule } from '@angular/material/button';
     HoverTipComponent,
     MyProjectsComponent,
     ProjectComponent,
-    BlogDetailPageComponent
+    BlogDetailPageComponent,
+    LoginDialogComponent
   ],
   imports: [
     BrowserModule,
@@ -41,7 +48,12 @@ import { MatButtonModule } from '@angular/material/button';
     HttpClientModule,
     MatCardModule,
     MatDividerModule,
-    MatButtonModule
+    MatButtonModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    FormsModule,
+    MatInputModule,
+    MatIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,7 +10,7 @@ export class ArticleComponent implements OnInit {
   @Input() articleInfo: ArticleInfo = {
     id: 1,
     author: "zhangsan",
-    title: "hello world, I am little moust ache. Welcome to this website",
+    title: "hello world, I am little moustache. Welcome to this website",
     createtime: 1643086376378,
     content: "whatever"
   };

@@ -9,7 +9,10 @@
         <div class="thoughts"><a routerLink=".">my blogs</a></div>
         <div class="about_me"><a routerLink="../about-me">about me</a></div>
         <div class="small_setting">
-            <div class="login">login</div>
+            <button *ngIf="!isLogin" mat-button class="login" (click)="login()" >Login</button>
+            <button *ngIf="isLogin" mat-button class="login" (click)="onAccountClick()">
+                <mat-icon aria-hidden="false" aria-label="Example home icon">home</mat-icon>
+            </button>
             <div class="setting">setting</div>   
         </div>         
     </div>

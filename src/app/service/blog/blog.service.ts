@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class BlogService {
 
-  constructor(private http: HttpClient) {
+  constructor(private _http: HttpClient) {
 
   }
 
@@ -16,12 +16,12 @@ export class BlogService {
     if (isAdmin){
       url += "?isadmin=1";
     }
-    return this.http.get<{}>(url)
+    return this._http.get<{}>(url)
   }
 
   getBlogDetail(id: number): Observable<{}> {
     let url = `/api/blog/detail?id=${id}`;
-    return this.http.get<{}>(url)
+    return this._http.get<{}>(url)
   }
   
 }

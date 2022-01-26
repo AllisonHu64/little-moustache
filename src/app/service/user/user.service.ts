@@ -19,4 +19,9 @@ export class UserService {
     let url = "/api/user/loginCheck";
     return this._http.post<{}>(url, {})
   }
+
+  logout(): Observable<{}> {
+    let url = "/api/user/logout";
+    return this._http.post<{}>(url, {})
+  }
 }

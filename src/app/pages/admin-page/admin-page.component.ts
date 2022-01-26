@@ -96,4 +96,15 @@ export class AdminPageComponent {
     })
   }
 
+  onLogoutClick(){
+    this._userService.logout().pipe(first()).subscribe((resp: any) => {
+      if (resp?.errno === 0){
+        window.alert("successfully logged out.")
+        this._router.navigate(["home"]);
+      } else {
+        window.alert("failed to log out.")
+      }
+    });
+  }
+
 }

@@ -22,6 +22,8 @@ export class HeaderComponent implements OnInit {
     this._loginCheckSubscription = this._userService.loginCheck().subscribe((resp:any)=>{
       if (resp.errno === 0){
         this._isLogin = true;
+      } else {
+        this._isLogin = false;
       }
     })
   }
@@ -61,5 +63,11 @@ export class HeaderComponent implements OnInit {
   get isLogin(){
     return this._isLogin;
   }
+
+  onSignupClick(){
+    window.alert("Please contact allison hu at pan.hu46@gmail.com to set up an account for you.")
+  }
+
+
 
 }

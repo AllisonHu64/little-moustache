@@ -17,34 +17,7 @@
             <button matSuffix mat-button (click)="onSearchClick()"><mat-icon >search</mat-icon></button>
         </mat-form-field>
     </div>
-    <div class="middle_container">
-        <div class="focus_container" (mouseover)="stopAutomaticSwipe()" (mouseout)="startAutomaticSwipe()">
-            <!--核心滚动区域-->
-            <ul class="pictures" #Pictures
-                [ngStyle]="{
-                'width': swiperPicArray.length * 100 +'%'
-                }"
-                [@swiperMove] = "signal"
-                >
-                <li *ngFor="let swiperPicPath of swiperPicArray">
-                    <img [src]="swiperPicPath" alt="can't find picture">
-                    <!--alt 这里可以改进-->
-                </li>
-            </ul>
-            <!--小圆圈-->
-            <ul class="circle" [ngStyle]="{
-                'width': (swiperPicArray.length-2) * 2 + 'vw'
-            }">
-                <li *ngFor="let swiperPicPath of swiperPicArray.slice(1,-1);let i = index"
-                    [ngClass]="{'current':(signal  === i.toString())}">
-                </li>
-            </ul>
-            <!--左侧按钮-->
-            <div class="arrow_l" (click)="swipe(-1)">&lt;</div>
-            <!--右侧按钮-->
-            <div class="arrow_r" (click)="swipe(1)">&gt;</div>
-        </div>
-    </div>
+
     <div class="blogs_container">
         <!-- <div class="hot_blogs_container">
             <div class="hot_blogs_title">
